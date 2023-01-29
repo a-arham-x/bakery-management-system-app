@@ -1,0 +1,15 @@
+.customer-row{
+    display: flex;
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.p{
+    color: white;
+    margin: auto;
+}
+
+.rows{
+    margin-top: 80px;
+}

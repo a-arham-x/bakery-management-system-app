@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+form{
+    margin: auto;
+    margin-top: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: #ff4500;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label{
+    font-size: 25px;
+    color: white;
+}
+
+input{
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width:200px;
+    height:30px;
+    font-size: 16px;
+    border-color: white;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    background-color: white;
+    color: #ff4500;
+    border-color: white;
+    width: 100px;
+    height: 40px;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.25s;
+}
+
+#checkbox{
+    display: inline;
+    height: 15px;
+    width: 15px;
+}
+
+.showpassword{
+    display: inline;
+    margin-left: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.foraccount{
+    display: inline;
+    margin-left: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+#link:hover{
+    text-decoration: underline;
+}
+
+.codeform{
+    display: flex;
+    height: 100px;
+    width: 600px;
+    margin-bottom: 50px;
+    background-color: black;
+}
+
+.codeInputs{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.numberInput{
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+}
+
+.submit{
+    margin: auto;
+    margin-bottom: 30px;
+}
+

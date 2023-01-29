@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+h1{
+    color: white;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    font-size: 50px;
+}
+
+.allProducts{
+    display: flex;  
+    margin-bottom: 20px;
+}
+
+.productCard{
+    border: 5px solid red;
+    width: 370px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+p{
+    display: block;
+    font-size: 30px;
+    color: #ff4500;
+    font-family: "Roboto", sans-serif;
+    margin-left: 10px;
+}
+
+.item-button{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    background-color: green;
+    color: white;
+}
+
+.order-made{
+    border: 5px solid #ff4500;
+    margin: 5px;
+}
+
+.order-button{
+    background-color: green;
+    color: white;
+    width: 150px;
+    margin: 5px;
+}
+
+.order-card{
+    border: 5px solid #ff4500;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.all-orders{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 300px;
+}
+
+.remove-item{
+    width: 150px;
+    background-color: green;
+    color: white;
+    margin: 5px;    
+}
+
+.product-update{
+    background-color: black;
+    border: 5px solid #ff4500;
+    height: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

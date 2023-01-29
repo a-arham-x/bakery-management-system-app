@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+h3{
+    color: white;
+    font-family: "Roborto", sans-serif;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.information{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.info{
+    font-size: 30px;
+    font-family: "Roborto", sans-serif;
+    color: white;
+    display: inline;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+
+.update{
+    display: inline;
+    margin-bottom: 20px;
+    background-color: green;
+    color: white;
+}
+
+.updationForm{
+    background-color: black;
+    border: 5px solid #ff4500;
+    height: 420px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logout{
+    background-color: green;
+    color: white;
+    width: 150px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+span{
+    display: block;
+    text-align: center;
+    color: red;
+    font-family: "Roborto", sans-serif;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.admin-update{
+    background-color: black;
+    border: 5px solid #ff4500;
+    height: 60px;
+    display: flex;
+    flex-direction: row;    
+    padding: 20px;
+}
