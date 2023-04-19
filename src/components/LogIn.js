@@ -30,7 +30,6 @@ function LogIn(props) {
     const logIn = async (e) => {
         e.preventDefault();
         const response = await fetch(`${host}/customer/login`, {
-            mode: "no-cors",
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
