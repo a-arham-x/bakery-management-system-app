@@ -42,3 +42,27 @@ li>.log-out{
         padding: 5px;
     }
 }
+
+@media screen and (max-width: 700px){
+    li{
+        font-size: 20px;
+        margin-left: 13px;
+        margin-right: 13px;
+    }
+
+    nav{
+        padding: 7px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    li{
+        font-size: 25px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    nav{
+        padding: 9px;
+    }
+}

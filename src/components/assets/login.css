@@ -104,10 +104,38 @@ button:hover{
     margin-bottom: 30px;
 }
 
+.verificationButton{
+    width: 300px;
+}
+
 
 @media screen and (max-width: 480px){
     form{
         width: 300px;
+    }
+
+    .verificationButton{
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    form{
+        width: 380px;
+    }
+
+    .verificationButton{
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    form{
+        width: 450px;
+    }
+
+    .verificationButton{
+        width: 270px;
     }
 }
 

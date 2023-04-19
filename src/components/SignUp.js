@@ -99,7 +99,7 @@ function SignUp(props) {
                 <input type="text" value={credentials.name} name="name" id="name" onChange={handleChange} required />
                 <label htmlFor="dateOfBirth">Date Of Birth</label>
                 <input type="date" value={credentials.dateOfBirth} name="dateOfBirth" id="dateOfBirth" onChange={handleChange} required />
-                <button style={{ width: "300px" }} onClick={getMail}>Get Verification Code</button>
+                <button className="verificationButton" onClick={getMail}>Get Verification Code</button>
             </form>
             <form className="codeform" style={{ display: formDisplay }}>
                 <label style={{marginBottom: "20px"}}>Enter Code</label>
