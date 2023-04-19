@@ -30,3 +30,15 @@ li:hover{
 li>.log-out{
     margin-left: "400px";
 }
+
+@media screen and (max-width: 480px){
+    li{
+        font-size: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    nav{
+        padding: 5px;
+    }
+}
