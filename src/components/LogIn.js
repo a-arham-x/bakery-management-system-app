@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {Link} from "react-router-dom";
 
 function LogIn(props) {
-    const host = "http://bms-server-production-cbce.up.railway.app";
+    const host = process.env.REACT_APP_HOST;
     const [intype, setIntype] = useState("password");
     const navigate = useNavigate();
 

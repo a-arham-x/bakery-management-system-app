@@ -8,7 +8,7 @@ function SignUp(props) {
     const [formDisplay, setFormDisplay] = useState("none");
     const navigate = useNavigate();
 
-    const host = "http://localhost:5000";
+    const host = process.env.REACT_APP_HOST;
 
     const [credentials, setCredentials] = useState({
         email: "",

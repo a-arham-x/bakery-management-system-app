@@ -5,7 +5,7 @@ import BookedOrder from './BookedOrder';
 
 function AdminOrders(props) {
     const navigate = useNavigate();
-    const host = "http://localhost:5000";
+    const host = process.env.REACT_APP_HOST;
     const getOrders = async ()=>{
         const url = `${host}/admin/getorders`;
         const response = await fetch(url, {

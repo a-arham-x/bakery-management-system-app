@@ -10,7 +10,7 @@ function AdminSettings(props) {
     const [passwords, setPasswords] = useState({
         oldPassword: "", newPassword: "", cPassword: ""
     });
-    const host = "http://localhost:5000";
+    const host = process.env.REACT_APP_HOST;
     const [intype, setIntype] = useState("password");
     const changeIntype = () => {
         if (intype==="password"){

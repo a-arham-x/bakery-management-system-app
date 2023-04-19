@@ -12,7 +12,7 @@ function ProductItem(props) {
     
     const [displayQuantity, setDisplayQuantity] = useState(quantity);
 
-    const host = "http://localhost:5000";
+    const host = process.env.REACT_APP_HOST;
 
     const addToOrder = () => {
       if (displayQuantity>0){

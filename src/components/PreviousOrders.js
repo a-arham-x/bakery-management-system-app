@@ -6,7 +6,7 @@ import BookedOrder from './BookedOrder';
 
 function PreviousOrders(props) {
     const navigate = useNavigate();
-    const host = "http://localhost:5000";
+    const host = process.env.REACT_APP_HOST;
     const callFetch = useRef(true);
     const [orders, setOrders] = useState(null);
     const getOrders = async ()=> {

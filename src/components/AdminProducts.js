@@ -12,7 +12,7 @@ function AdminProducts(props) {
    const [buttonText, setButtonText] = useState("Add Item")
    const [product, setProduct] = useState({name: "", price: "", quantity:"", image:"./assets/grey.png"});
    var data = new FormData();
-   const host = "http://localhost:5000";
+   const host = process.env.REACT_APP_HOST;
    const handleChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value});
    }
