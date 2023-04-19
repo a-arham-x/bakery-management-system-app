@@ -5,7 +5,6 @@ const ProductState = (props) => {
 
     const getProducts = async () => {
         const url = `${host}/products/all`;
-        console.log(host)
         const response = await fetch(url, {
           method: "GET",
         });
