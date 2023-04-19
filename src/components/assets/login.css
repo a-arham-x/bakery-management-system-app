@@ -106,6 +106,7 @@ button:hover{
 
 .verificationButton{
     width: 300px;
+    cursor: pointer;
 }
 
 
@@ -114,9 +115,9 @@ button:hover{
         width: 300px;
     }
 
-    /* .verificationButton{
+    .verificationButton{
         width: 260px;
-    } */
+    }
 }
 
 /* @media screen and (max-width: 700px){
