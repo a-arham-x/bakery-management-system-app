@@ -48,7 +48,6 @@ function SignUp(props) {
             const json = await response.json();
             if (json.success){
                 setFormDisplay("flex");
-                console.log(json.code);
             }else{
                 props.showAlert(json.message);
             }
