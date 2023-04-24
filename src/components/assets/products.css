@@ -77,3 +77,25 @@ p{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 1000px){
+    .allProducts{
+        flex-direction: column;
+    }
+
+    .productCard{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .productCard{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .productCard{
+        width: 300px;
+    }
+}
