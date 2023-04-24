@@ -29,8 +29,6 @@ function UpdateProduct(props) {
         data.append("price", update.price);
         data.append("quantity", update.quantity);
         data.append("image", update.image);
-        console.log(data);
-        console.log(update);
         axios({
             url,
             method: "PUT",
@@ -39,7 +37,6 @@ function UpdateProduct(props) {
             },
             data
         }).then(res => { 
-            res.headers("Access-Control-Allow-Origin", process.env.REACT_APP_HOST);
             props.showAlert(res.data.message);
         }).catch(() => { props.showAlert("Internal Server Error") })
     }

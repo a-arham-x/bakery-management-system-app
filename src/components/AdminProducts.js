@@ -49,7 +49,6 @@ function AdminProducts(props) {
         },
         data
     }).then(res=>{
-        res.headers("Access-Control-Allow-Origin", process.env.REACT_APP_HOST);
         props.showAlert(res.data.message)}
         ).catch((err)=>{props.showAlert("Internal Server Error")})
    }
