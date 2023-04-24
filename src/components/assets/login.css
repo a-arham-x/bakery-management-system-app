@@ -110,26 +110,6 @@ button:hover{
 }
 
 
-@media screen and (max-width: 480px){
-    form{
-        width: 300px;
-    }
-
-    .verificationButton{
-        width: 260px;
-    }
-}
-
-/* @media screen and (max-width: 700px){
-    form{
-        width: 380px;
-    }
-
-    .verificationButton{
-        width: 230px;
-    }
-}
-
 @media screen and (max-width: 1000px){
     form{
         width: 450px;
@@ -138,5 +118,69 @@ button:hover{
     .verificationButton{
         width: 270px;
     }
+
+    .numberInput{
+        height: 40px;
+        width:40px;
+        font-size: 25px;
+    }
+
+    .codeform{
+        width: 450px;
+    }
+
+    .codeInputs{
+        width: 450px;
+    }
 }
- */
+
+@media screen and (max-width: 700px){
+    form{
+        width: 380px;
+    }
+
+    .verificationButton{
+        width: 230px;
+    }
+
+    .numberInput{
+        height: 30px;
+        width: 30px;
+        font-size: 20px;
+    }
+
+    .codeform{
+        width: 300px;
+    }
+
+    .codeInputs{
+        width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    form{
+        width: 300px;
+    }
+
+    .verificationButton{
+        width: 260px;
+    }
+
+    .numberInput{
+        height: 20px;
+        width: 20px;
+        font-size: 10px;
+    }
+
+    .codeform{
+        width: 200px;
+    }
+
+    .codeInputs{
+        width: 200px;
+    }
+}
+
+
