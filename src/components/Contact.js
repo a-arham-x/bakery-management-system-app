@@ -11,8 +11,8 @@ function Contact() {
                 <p className="contact">In case you have any query or concern, then don't hesitate.</p>
                 <p className="contact">Feel free to tell us and help us improve our services.</p>
             </div>
-            <p class="contactInfo">Email: cinema.ticketing.system117@gmail.com</p>
-            <p class="contactInfo">Phone: 0314-17147714</p>
+            <p className="contactInfo">Email: cinema.ticketing.system117@gmail.com</p>
+            <p className="contactInfo">Phone: 0314-17147714</p>
         </>
     )
 }

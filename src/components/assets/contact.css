@@ -23,3 +23,34 @@
     text-align: center;
     margin-top: 40px;
 }
+
+@media screen and (max-width: 1000px){
+    .contactCompany{
+        width: 600px;
+    }
+
+    .contactInfo{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .contactCompany{
+        width: 400px;
+    }
+
+    .contactInfo{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .contactCompany{
+        width: 300px;
+    }
+
+    .contactInfo{
+        font-size: 20px;
+    }
+}
+

@@ -44,3 +44,36 @@ p{
     color: white;
     font-size: 20px;
 }
+
+@media screen and (max-width: 1000px){
+    img{
+        height: 500px;
+        width: 500px;
+    }
+
+    .aboutCompany{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    img{
+        height: 350px;
+        width: 350px;
+    }
+
+    .aboutCompany{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    img{
+        height: 200px;
+        width: 200px;
+    }
+
+    .aboutCompany{
+        width: 300px;
+    }
+}
