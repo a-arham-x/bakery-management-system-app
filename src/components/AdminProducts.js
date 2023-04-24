@@ -48,7 +48,10 @@ function AdminProducts(props) {
             "admin-token": localStorage.getItem("admin-token"),
         },
         data
-    }).then(res=>{props.showAlert(res.data.message)}).catch((err)=>{props.showAlert("Internal Server Error")})
+    }).then(res=>{
+        res.headers("Access-Control-Allow-Origin", process.env.REACT_APP_HOST);
+        props.showAlert(res.data.message)}
+        ).catch((err)=>{props.showAlert("Internal Server Error")})
    }
   return (
     <>

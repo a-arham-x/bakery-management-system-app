@@ -39,8 +39,8 @@ function UpdateProduct(props) {
             },
             data
         }).then(res => { 
+            res.headers("Access-Control-Allow-Origin", process.env.REACT_APP_HOST);
             props.showAlert(res.data.message);
-            console.log(res); 
         }).catch(() => { props.showAlert("Internal Server Error") })
     }
     return (
