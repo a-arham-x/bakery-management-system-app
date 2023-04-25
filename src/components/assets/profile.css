@@ -86,6 +86,41 @@ span{
     padding: 20px;
 }
 
+@media screen and (max-width: 1000px){
+
+    .numberInput{
+        height: 40px;
+        width:40px;
+        font-size: 25px;
+    }
+
+    .codeform{
+        width: 450px;
+    }
+
+    .codeInputs{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    .numberInput{
+        height: 30px;
+        width: 30px;
+        font-size: 20px;
+    }
+
+    .codeform{
+        width: 300px;
+    }
+
+    .codeInputs{
+        width: 300px;
+    }
+}
+
+
 @media screen and (max-width: 480px){
     .info{
         font-size: 15px;
@@ -95,5 +130,23 @@ span{
 
     .update{
         font-size: 15px;
+    }
+
+    .updationForm>label{
+        font-size: 15px;
+    }
+
+    .numberInput{
+        height: 20px;
+        width: 20px;
+        font-size: 10px;
+    }
+
+    .codeform{
+        width: 200px;
+    }
+
+    .codeInputs{
+        width: 200px;
     }
 }
