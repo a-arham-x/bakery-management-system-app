@@ -85,3 +85,15 @@ span{
     flex-direction: row;    
     padding: 20px;
 }
+
+@media screen and (max-width: 480px){
+    .info{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .update{
+        font-size: 15px;
+    }
+}
