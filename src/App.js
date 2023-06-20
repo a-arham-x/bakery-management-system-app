@@ -45,7 +45,7 @@ function App() {
   const setId = (id)=>{
     setCustomerId(id);
   }
-  const host = "http://localhost:5000";
+  const host = process.env.REACT_APP_HOST;
   const markReceived = async (id)=>{
     const url = `${host}/orders/received`;
     const response = await fetch(url, {
