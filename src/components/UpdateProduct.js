@@ -13,7 +13,7 @@ function UpdateProduct(props) {
         }
     }, [])
     const { name, price, quantity, imageUrl, _id } = props.product;
-    const [update, setUpdate] = useState({ name, price, quantity, image: "none" });
+    const [update, setUpdate] = useState({ name, price, quantity, image: null});
     const host = process.env.REACT_APP_HOST;
     var data = new FormData();
     const handleChange = (e) => {

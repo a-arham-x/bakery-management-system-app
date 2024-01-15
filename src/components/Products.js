@@ -24,7 +24,7 @@ function Products(props) {
     let groupedProducts = [];
     let index = -1;
     let k = 2;
-    for (let i = 0; i < products.length; i++) {
+    for (let i = 0; i < products?.length; i++) {
         if (k === 2) {
             k = 0;
             groupedProducts.push([]);
