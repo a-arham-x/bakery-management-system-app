@@ -4,64 +4,64 @@
     margin: 0;
 }
 
-nav{
+.navbar{
     background-color: #ff4500;
     color: white;
     padding: 10px;
 }
 
-ul{
+.nav-list{
     display: flex;
     list-style: none;
     cursor: pointer;
 }
 
-li{
+.nav-item{
     font-size: 30px;
     margin-left: 20px;
     margin-right: 20px;
     font-family: 'Roboto', sans-serif;
 }
 
-li:hover{
+.nav-item:hover{
     text-decoration: underline;
 }
 
-li>.log-out{
+.nav-item>.log-out{
     margin-left: "400px";
 }
 
 @media screen and (max-width: 1000px){
-    li{
+    .nav-item{
         font-size: 25px;
         margin-left: 16px;
         margin-right: 16px;
     } 
-    nav{
+    .navbar{
         padding: 9px;
     }
 }
 
 @media screen and (max-width: 700px){
-    li{
+    .nav-item{
         font-size: 20px;
         margin-left: 13px;
         margin-right: 13px;
     }
 
-    nav{
+    .navbar{
         padding: 7px;
     }
 }
 
 @media screen and (max-width: 480px){
-    li{
+    .nav-item{
         font-size: 15px;
         margin-left: 10px;
         margin-right: 10px;
     }
 
-    nav{
+    .navbar{
         padding: 5px;
     }
 }

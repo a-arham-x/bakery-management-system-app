@@ -12,9 +12,9 @@ function CustomerRow(props) {
     
     return (
         <div className="customer-row">
-            <p className="p">{props.customer.name}</p>
-            <p className="p">{props.customer.email}</p>
-            <p className="p" onClick={idSet} style={{ cursor: "pointer" }}>View Orders</p>
+            <p className="customer-text">{props.customer.name}</p>
+            <p className="customer-text">{props.customer.email}</p>
+            <p className="customer-text" onClick={idSet} style={{ cursor: "pointer" }}>View Orders</p>
         </div>
     )
 }

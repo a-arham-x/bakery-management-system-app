@@ -53,16 +53,16 @@ function LogIn(props) {
     }
 
     return (
-        <form>
-            <label htmlFor="email">Email Address</label>
-            <input type="text" value={credentials.email} name="email" id="email" onChange={handleChange}/>
-            <label htmlFor="password">Password</label>
-            <input type={intype} value={credentials.password} name="password" id="password" onChange={handleChange}/>
+        <form className="form">
+            <label className="form-label" htmlFor="email">Email Address</label>
+            <input className="form-input" type="text" value={credentials.email} name="email" id="email" onChange={handleChange}/>
+            <label className="form-label" htmlFor="password">Password</label>
+            <input className="form-input" type={intype} value={credentials.password} name="password" id="password" onChange={handleChange}/>
             <div className="showPasword">
                 <input type="checkbox" id="checkbox" onChange={changeIntype}/>
                 <p className="showpassword">Show Password</p>
             </div>
-            <button onClick={logIn}>Log In</button>
+            <button className="form-button" onClick={logIn}>Log In</button>
             <div className="no-account">
                 <p className="foraccount">Do not have an account ? </p>
                 <p className="foraccount" id="link"><Link style={{textDecoration: "none", cursor: "pointer"}} to="/signup">SignUp</Link></p>

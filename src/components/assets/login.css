@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-form{
+.form{
     margin: auto;
     margin-top: 100px;
     width: 500px;
@@ -15,12 +15,12 @@ form{
     flex-direction: column;
 }
 
-label{
+.form-label{
     font-size: 25px;
     color: white;
 }
 
-input{
+.form-input{
     margin: auto;
     display: block;
     margin-top: 10px;
@@ -32,11 +32,11 @@ input{
     border-radius: 5px;
 }
 
-input:focus{
+.form-input:focus{
     outline: none;
 }
 
-button{
+.form-button{
     background-color: white;
     color: #ff4500;
     border-color: white;
@@ -48,7 +48,7 @@ button{
     border-radius: 6px;
 }
 
-button:hover{
+.form-button:hover{
     transform: scale(1.1);
     transition-duration: 0.25s;
 }
@@ -79,6 +79,11 @@ button:hover{
 
 .codeform{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
     height: 100px;
     width: 600px;
     margin-bottom: 50px;
@@ -91,27 +96,47 @@ button:hover{
     height: 100px;
     width: 600px;
     margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .numberInput{
     height: 50px;
     width: 50px;
     font-size: 30px;
+    margin: auto;
+    border-radius: 10px;
 }
 
 .submit{
+    background-color: white;
+    color: #ff4500;
+    border-color: white;
+    width: 100px;
+    height: 40px;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
     margin: auto;
     margin-bottom: 30px;
 }
 
 .verificationButton{
+    background-color: white;
+    color: #ff4500;
+    border-color: white;
+    height: 40px;
+    font-size: 23px;
+    font-weight: 700;
+    border-radius: 6px;
     width: 300px;
     cursor: pointer;
 }
 
 
 @media screen and (max-width: 1000px){
-    form{
+    .form{
         width: 450px;
     }
 
@@ -135,7 +160,7 @@ button:hover{
 }
 
 @media screen and (max-width: 700px){
-    form{
+    .form{
         width: 380px;
     }
 
@@ -160,7 +185,7 @@ button:hover{
 
 
 @media screen and (max-width: 480px){
-    form{
+    .form{
         width: 300px;
     }
 

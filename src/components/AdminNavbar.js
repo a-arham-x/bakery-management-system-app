@@ -11,13 +11,13 @@ function AdminNavbar() {
         navigate("/");
     }
     return (
-        <nav style={{ display: navLocations.includes(location.pathname) ? "flex" : "none" }}>
-            <ul>
-                <li><Link style={{ color: `${location.pathname === "/adminhome"?"pink" : "white"}`, textDecoration: "none" }} to="/adminhome">Home</Link></li>
-                <li><Link style={{ color: `${location.pathname === "/adminproducts" ? "pink" : "white"}`, textDecoration: "none" }} to="/adminproducts">Products</Link></li>
-                <li><Link style={{ color: `${location.pathname === "/admincustomers" ? "pink" : "white"}`, textDecoration: "none" }} to="/admincustomers">Customers</Link></li>
-                <li><Link style={{ color: `${location.pathname === "/adminsettings" ? "pink" : "white"}`, textDecoration: "none" }} to="/adminsettings">Settings</Link></li>
-                <li onClick={logOut}>Log Out</li>
+        <nav className="navbar" style={{ display: navLocations.includes(location.pathname) ? "flex" : "none" }}>
+            <ul className="nav-list">
+                <li className="nav-item"><Link style={{ color: `${location.pathname === "/adminhome"?"pink" : "white"}`, textDecoration: "none" }} to="/adminhome">Home</Link></li>
+                <li className="nav-item"><Link style={{ color: `${location.pathname === "/adminproducts" ? "pink" : "white"}`, textDecoration: "none" }} to="/adminproducts">Products</Link></li>
+                <li className="nav-item"><Link style={{ color: `${location.pathname === "/admincustomers" ? "pink" : "white"}`, textDecoration: "none" }} to="/admincustomers">Customers</Link></li>
+                <li className="nav-item"><Link style={{ color: `${location.pathname === "/adminsettings" ? "pink" : "white"}`, textDecoration: "none" }} to="/adminsettings">Settings</Link></li>
+                <li className="nav-item" onClick={logOut}>Log Out</li>
             </ul>
         </nav>
     )

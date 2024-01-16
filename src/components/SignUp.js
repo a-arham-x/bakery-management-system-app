@@ -84,21 +84,21 @@ function SignUp(props) {
     }
     return (
         <>
-            <form style={{ height: "600px", marginTop: "60px" }}>
-                <label htmlFor="email">Email Address</label>
-                <input type="email" value={credentials.email} name="email" id="email" onChange={handleChange} required />
-                <label htmlFor="password">Password</label>
-                <input type={intype} value={credentials.password} name="password" onChange={handleChange} id="password" required />
-                <label htmlFor="cpassword">Confirm Password</label>
-                <input type={intype} value={credentials.cpassword} name="cpassword" onChange={handleChange} id="cpassword" required />
+            <form className="form" style={{ height: "600px", marginTop: "60px" }}>
+                <label className="form-label" htmlFor="email">Email Address</label>
+                <input className="form-input" type="email" value={credentials.email} name="email" id="email" onChange={handleChange} required />
+                <label className="form-label" htmlFor="password">Password</label>
+                <input className="form-input" type={intype} value={credentials.password} name="password" onChange={handleChange} id="password" required />
+                <label className="form-label" htmlFor="cpassword">Confirm Password</label>
+                <input className="form-input" type={intype} value={credentials.cpassword} name="cpassword" onChange={handleChange} id="cpassword" required />
                 <div className="showPasword">
                     <input type="checkbox" id="checkbox" onChange={changeIntype} />
                     <p className="showpassword">Show Password</p>
                 </div>
-                <label htmlFor="name">Your Name</label>
-                <input type="text" value={credentials.name} name="name" id="name" onChange={handleChange} required />
-                <label htmlFor="dateOfBirth">Date Of Birth</label>
-                <input type="date" value={credentials.dateOfBirth} name="dateOfBirth" id="dateOfBirth" onChange={handleChange} required />
+                <label className="form-label" htmlFor="name">Your Name</label>
+                <input className="form-input" type="text" value={credentials.name} name="name" id="name" onChange={handleChange} required />
+                <label className="form-label" htmlFor="dateOfBirth">Date Of Birth</label>
+                <input className="form-input" type="date" value={credentials.dateOfBirth} name="dateOfBirth" id="dateOfBirth" onChange={handleChange} required />
                 <button className="verificationButton" onClick={getMail}>Get Verification Code</button>
             </form>
             <form className="codeform" style={{ display: formDisplay }}>

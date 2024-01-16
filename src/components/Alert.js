@@ -1,11 +1,11 @@
 import React from 'react';
-import "./assets/alert.css";    
+import "./assets/modal.css";    
 
 function Alert(props) {
   return (
     <>
-        <div className="alert">
-            <p className="message">{props.message}</p>
+        <div className="modal-wrapper">
+          <p className="modal-text">{props.message}</p>
         </div>
     </>
   )

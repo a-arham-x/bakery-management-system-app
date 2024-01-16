@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import customerContext from './context/customerContext';
 import "./assets/profile.css";
+import TwoStepAuthModel from './TwoStepAuthModal';
 
 function Profile(props) {
   const host = process.env.REACT_APP_HOST;
@@ -13,6 +14,7 @@ function Profile(props) {
   const [customer, setCustomer] = useState({});
   const [intype, setIntype] = useState("password");
   const [passwords, setPasswords] = useState({ oldPassword: "", newPassword: "", cPassword: "" });
+  const [showTwoStepAuthModal, setShowTwoStepAuthModal] = useState(false);
   const navigateToUpdate = () => {
     navigate("/update");
   }
@@ -58,6 +60,8 @@ function Profile(props) {
       props.showAlert("Please confirm your new password")
     }
   }
+
+  const handleClose = ()=> setShowTwoStepAuthModal(false);
   return (
     <>
       <h1>Your Profile</h1>
@@ -72,20 +76,30 @@ function Profile(props) {
         </div>
       </div>
       <h3>You can Update Password from here</h3>
-      <form className="updationForm">
-        <label htmlFor="oldPassword">Old Password</label>
-        <input type={intype} value={passwords.oldPassword} name="oldPassword" id="oldPassword" onChange={handleChange} />
-        <label htmlFor="newPassword">New Password</label>
-        <input type={intype} value={passwords.newPassword} name="newPassword" id="newPassword" onChange={handleChange} />
-        <label htmlFor="cPassword">Confirm New Password</label>
-        <input type={intype} value={passwords.cPassword} name="cPassword" id="cPassword" onChange={handleChange} />
+      <form className="form updationForm">
+        <label className="form-label" htmlFor="oldPassword">Old Password</label>
+        <input className="form-input" type={intype} value={passwords.oldPassword} name="oldPassword" id="oldPassword" onChange={handleChange} />
+        <label className="form-label" htmlFor="newPassword">New Password</label>
+        <input className="form-input" type={intype} value={passwords.newPassword} name="newPassword" id="newPassword" onChange={handleChange} />
+        <label className="form-label" htmlFor="cPassword">Confirm New Password</label>
+        <input className="form-input" type={intype} value={passwords.cPassword} name="cPassword" id="cPassword" onChange={handleChange} />
         <div className="showPasword">
           <input type="checkbox" id="checkbox" onChange={changeIntype} />
           <p className="showpassword">Show All Passwords</p>
         </div>
-        <button className="update" onClick={updatePassword}>Update</button>
+        <button className="form-button update" onClick={updatePassword}>Update</button>
       </form>
-      <button className="logout" onClick={logOut}>Log Out</button>
+      <h3>Security</h3>
+      <div className="container">
+        <div className="information">
+          <p className="info">Two Step Authentication</p>
+        </div>
+        <div className="buttons">
+          <button className="form-button update" onClick={()=>setShowTwoStepAuthModal(true)}>Enable</button>
+        </div>
+      </div>
+      <button className="form-button logout" onClick={logOut}>Log Out</button>
+      {showTwoStepAuthModal && <TwoStepAuthModel showModal={setShowTwoStepAuthModal} showAlert={props.showAlert}/>}
     </>
   )
 }

@@ -32,11 +32,14 @@ import AdminOrders from './components/AdminOrders';
 function App() {
   const [message, setMessage] = useState();
   const [product, setProduct] = useState({});
+  const [alertVisible, setAlertVisible] = useState(false);
   const showAlert = (message) => {
     setMessage(message);
+    setAlertVisible(true);
     setTimeout(() => {
       setMessage(null);
-    }, 1500);
+      setAlertVisible(false);
+    }, 3000);
   };
   const getProduct = (product)=>{
     setProduct(product);
@@ -67,7 +70,7 @@ function App() {
             <Navbar />
             <UserNavbar />
             <AdminNavbar />
-            <Alert message={message}/>
+            {alertVisible && <Alert message={message}/>}
             <Routes>
               <Route exact path="/" element={<LogIn showAlert={showAlert}/>} />
               <Route exact path="/signup" element={<SignUp showAlert={showAlert}/>} />
