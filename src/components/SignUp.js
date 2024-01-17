@@ -38,12 +38,12 @@ function SignUp(props) {
     const getMail = async (e) => {
         e.preventDefault();
         if (credentials.password === credentials.cpassword) {
-            const response = await fetch(`${host}/customer/getmail`, {
+            const response = await fetch(`${host}/customer/checkemail`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, dateOfBirth: credentials.dateOfBirth })
+                body: JSON.stringify({ email: credentials.email })
             });
             const json = await response.json();
             if (json.success){
@@ -64,7 +64,7 @@ function SignUp(props) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ code: codeEntered })
+            body: JSON.stringify({ ...credentials, code: codeEntered })
         });
         const json = await response.json();
         if (json.success){
@@ -102,7 +102,7 @@ function SignUp(props) {
                 <button className="verificationButton" onClick={getMail}>Get Verification Code</button>
             </form>
             <form className="codeform" style={{ display: formDisplay }}>
-                <label style={{marginBottom: "20px"}}>Enter Code</label>
+                <label className="form-label" style={{marginBottom: "20px"}}>Enter Code</label>
                 <div className="codeInputs">
                     <input className="numberInput" type="number" value={digits.digit1} maxLength="1" size="1" min="0" max="9" name="digit1" onChange={digitsChange} />
                     <input className="numberInput" type="number" value={digits.digit2} maxLength="1" size="1" min="0" max="9" name="digit2" onChange={digitsChange} />

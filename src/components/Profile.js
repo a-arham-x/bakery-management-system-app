@@ -61,7 +61,6 @@ function Profile(props) {
     }
   }
 
-  const handleClose = ()=> setShowTwoStepAuthModal(false);
   return (
     <>
       <h1>Your Profile</h1>
@@ -71,8 +70,8 @@ function Profile(props) {
           <p className="info">Email: {customer.email}</p>
         </div>
         <div className="buttons">
-          <button className="update" onClick={navigateToUpdate}>Update</button>
-          <button className="update" onClick={navigateToUpdate}>Update</button>
+          <button className="form-button update" onClick={navigateToUpdate}>Update</button>
+          <button className="form-button update" onClick={navigateToUpdate}>Update</button>
         </div>
       </div>
       <h3>You can Update Password from here</h3>

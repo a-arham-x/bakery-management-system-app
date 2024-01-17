@@ -28,33 +28,6 @@ function TwoStepAuthModel({showModal, showAlert}) {
       </div>
     </div>
     </>
-      // <Modal
-      //   className="modal"
-      //   show={showModal}
-      //   onHide={handleClose}
-      // >
-      //   <div>
-      //     <div className="modal-header">
-      //       <div className="modal-title">Modal Heading</div>
-      //       <div>
-      //         <span className="close-button" onClick={handleClose}>
-      //           x
-      //         </span>
-      //       </div>
-      //     </div>
-      //     <div className="modal-desc">
-      //       <p>Modal body contains text.</p>
-      //     </div>
-      //     <div className="modal-footer">
-      //       <button className="secondary-button" onClick={handleClose}>
-      //         Close
-      //       </button>
-      //       <button className="primary-button">
-      //         Save Changes
-      //       </button>
-      //     </div>
-      //   </div>
-      // </Modal>
   )
 }
 

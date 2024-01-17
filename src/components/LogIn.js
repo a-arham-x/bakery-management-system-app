@@ -3,6 +3,7 @@ import "./assets/login.css";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {Link} from "react-router-dom";
+import LoginCodeModal from './LoginCodeModal';
 
 function LogIn(props) {
     const host = process.env.REACT_APP_HOST;
@@ -10,6 +11,8 @@ function LogIn(props) {
     const navigate = useNavigate();
 
     const [credentials, setCredentials] = useState({email: "", password: ""});
+
+    const [showLoginCodeModal, setShowLoginCodeModal] = useState(false)
 
     useEffect(() => {   
     if (localStorage.getItem("token")){
@@ -37,13 +40,17 @@ function LogIn(props) {
             body: JSON.stringify(credentials)
         });
         const json = await response.json();
+        console.log(json);
         if (json.token){
             localStorage.setItem("token", json.token);
             navigate("/home");
         }else if (json.adminToken){
             localStorage.setItem("admin-token", json.adminToken);
             navigate("/adminhome");
-        }else{
+        }else if (json.success){
+            setShowLoginCodeModal(true);
+        }
+        else{
             props.showAlert(json.message);
         }
     }
@@ -53,6 +60,8 @@ function LogIn(props) {
     }
 
     return (
+        <>
+        {showLoginCodeModal && <LoginCodeModal showAlert={props.showAlert} showModal={setShowLoginCodeModal} credentials={credentials}/>}
         <form className="form">
             <label className="form-label" htmlFor="email">Email Address</label>
             <input className="form-input" type="text" value={credentials.email} name="email" id="email" onChange={handleChange}/>
@@ -68,6 +77,7 @@ function LogIn(props) {
                 <p className="foraccount" id="link"><Link style={{textDecoration: "none", cursor: "pointer"}} to="/signup">SignUp</Link></p>
             </div>
         </form>
+        </>
     )
 }
 

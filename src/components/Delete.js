@@ -43,18 +43,18 @@ function Delete(props) {
   return (
     <>
       <h1>Delete my Account</h1>
-      <form className="updationForm">
-        <label htmlFor="email">Your Email</label>
-        <input value={credentials.email} type="email" name="email" id="email" onChange={handleChange} required />
-        <label htmlFor="password">Your Password</label>
-        <input value={credentials.password} type={intype} name="password" id="password" onChange={handleChange} required />
-        <label htmlFor="cpassword">Confirm Password</label>
-        <input value={credentials.cpassword} type={intype} name="cpassword" id="cpassword" onChange={handleChange} required />
+      <form className="form updationForm">
+        <label className="form-label" htmlFor="email">Your Email</label>
+        <input className="form-input" value={credentials.email} type="email" name="email" id="email" onChange={handleChange} required />
+        <label className="form-label" htmlFor="password">Your Password</label>
+        <input className="form-input" value={credentials.password} type={intype} name="password" id="password" onChange={handleChange} required />
+        <label className="form-label" htmlFor="cpassword">Confirm Password</label>
+        <input className="form-input" value={credentials.cpassword} type={intype} name="cpassword" id="cpassword" onChange={handleChange} required />
         <div className="showPasword">
           <input type="checkbox" id="checkbox" onChange={changeIntype} />
           <p className="showpassword">Show All Passwords</p>
         </div>
-        <button className="update" onClick={deleteAccount}>Delete</button>
+        <button className="form-button update" onClick={deleteAccount}>Delete</button>
       </form>
     </>
   )

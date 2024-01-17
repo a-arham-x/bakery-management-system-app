@@ -38,6 +38,18 @@ h3{
     display: inline;
 }
 
+.form-button{
+    background-color: white;
+    color: #ff4500;
+    border-color: white;
+    width: 100px;
+    height: 40px;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
 .buttons{
     display: flex;
     flex-direction: column;
@@ -57,6 +69,7 @@ h3{
     height: 420px;
     margin-bottom: 20px;
     margin-top: 20px;
+    color: white;
 }
 
 .logout{

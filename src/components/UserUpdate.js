@@ -92,17 +92,17 @@ function UserUpdate(props) {
     return (
         <>
             <h1>Update Your Information</h1>
-            <form className="updationForm" style={{height: "200px"}}>
-                <label>Name: {customer.name}</label>
-                <label htmlFor="newName">New Name</label>
-                <input value={newName} type="text" name="newName" id="newName" onChange={handleNameChange}/>
-                <button className="update" onClick={updateName}>Update</button>
+            <form className="form updationForm" style={{height: "200px"}}>
+                <label className="form-label">Name: {customer.name}</label>
+                <label className="form-label" htmlFor="newName">New Name</label>
+                <input className="form-input" value={newName} type="text" name="newName" id="newName" onChange={handleNameChange}/>
+                <button className="form-button update" onClick={updateName}>Update</button>
             </form>
-            <form className="updationForm" style={{height: "200px"}}>
-                <label>Email: {customer.email}</label>
-                <label htmlFor="newEmail">New Email</label>
-                <input value={newEmail} type="email" name="newEmail" id="newEmail" onChange={handleEmailChange}/>
-                <button className="update" onClick={getMail}>Update</button>
+            <form className="form updationForm" style={{height: "200px"}}>
+                <label className="form-label">Email: {customer.email}</label>
+                <label className="form-label" htmlFor="newEmail">New Email</label>
+                <input className="form-input" value={newEmail} type="email" name="newEmail" id="newEmail" onChange={handleEmailChange}/>
+                <button className="form-button update" onClick={getMail}>Update</button>
             </form>
             <Link to="/delete"><span>Delete my account</span></Link>
             <form className="codeform" style={{ display: formDisplay }}>
