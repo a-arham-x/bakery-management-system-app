@@ -122,15 +122,15 @@ function AdminSettings(props) {
     return (
         <>
             <h1>Administartor Settings</h1>
-            <form className="admin-update">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" value={update.name} placeholder={name} onChange={handleUpdate}/>
-                <button onClick={updateName}>Update</button>
+            <form className="admin-update form">
+                <label className="form-label" htmlFor="name">Name</label>
+                <input className="form-input" type="text" name="name" id="name" value={update.name} placeholder={name} onChange={handleUpdate}/>
+                <button className="form-button" onClick={updateName}>Update</button>
             </form>
-            <form className="admin-update">
-                <label htmlFor="email">Email</label>
-                <input type="text" name="email" id="email" value={update.email} placeholder={email} onChange={handleUpdate}/>
-                <button onClick={getMail}>Update</button>
+            <form className="form admin-update">
+                <label className="form-label" htmlFor="email">Email</label>
+                <input className="form-input" type="text" name="email" id="email" value={update.email} placeholder={email} onChange={handleUpdate}/>
+                <button className="form-button" onClick={getMail}>Update</button>
             </form>
             <form className="codeform" style={{ display: formDisplay }}>
                 <label style={{ marginBottom: "20px" }}>Enter Code</label>
@@ -144,18 +144,18 @@ function AdminSettings(props) {
                 </div>
                 <button className="submit" onClick={updateEmail}>Submit</button>
             </form>
-            <form className="updationForm">
-                <label htmlFor="oldPassword">Old Password</label>
-                <input type={intype} value={passwords.oldPassword} name="oldPassword" id="oldPassword" onChange={passwordChange} />
-                <label htmlFor="newPassword">New Password</label>
-                <input type={intype} value={passwords.newPassword} name="newPassword" id="newPassword" onChange={passwordChange} />
-                <label htmlFor="cPassword">Confirm New Password</label>
-                <input type={intype} value={passwords.cPassword} name="cPassword" id="cPassword" onChange={passwordChange} />
+            <form className="form updationForm">
+                <label className="form-label" htmlFor="oldPassword">Old Password</label>
+                <input className="form-input" type={intype} value={passwords.oldPassword} name="oldPassword" id="oldPassword" onChange={passwordChange} />
+                <label className="form-label" htmlFor="newPassword">New Password</label>
+                <input className="form-input" type={intype} value={passwords.newPassword} name="newPassword" id="newPassword" onChange={passwordChange} />
+                <label className="form-label" htmlFor="cPassword">Confirm New Password</label>
+                <input className="form-input" type={intype} value={passwords.cPassword} name="cPassword" id="cPassword" onChange={passwordChange} />
                 <div className="showPasword">
                     <input type="checkbox" id="checkbox" onChange={changeIntype} />
                     <p className="showpassword">Show All Passwords</p>
                 </div>
-                <button className="update" onClick={updatePassword}>Update</button>
+                <button className="form-button update" onClick={updatePassword}>Update</button>
             </form>
         </>
     )

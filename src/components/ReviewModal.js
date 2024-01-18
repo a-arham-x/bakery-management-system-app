@@ -30,7 +30,7 @@ function ReviewModal({showModal, showAlert, setReviews, getReviews}) {
     <div className="modal-wrapper" style={{height: "370px"}}>
         <p className="close-modal" onClick={closeModal}>X</p>
         <p className="modal-text">Add your review</p>
-        <textarea name="review" id="review" cols="30" rows="10" onChange={handleChange}></textarea>
+        <textarea name="review" id="review" cols="30" rows="10" value={comment} onChange={handleChange}></textarea>
         <button className="form-button update order-button" onClick={postReview}>POST</button>
     </div>
   )

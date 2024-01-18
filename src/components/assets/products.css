@@ -67,7 +67,12 @@ p{
     width: 150px;
     background-color: green;
     color: white;
-    margin: 5px;    
+    margin: 5px; 
+    height: 40px;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;   
 }
 
 .product-update{

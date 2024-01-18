@@ -56,16 +56,16 @@ function AdminProducts(props) {
     <>
         <h1>These are the Products Available</h1>
         <button className="remove-item" onClick={openForm}>{buttonText}</button>
-        <form className="updationForm" style={{display: formDisplay}} encType="multipart/form-data">
-        <label htmlFor="name">Product Name</label>
-        <input type="text" value={product.name} name="name" id="name" onChange={handleChange} required/>
-        <label htmlFor="price">Price</label>
-        <input type="number" value={product.price} name="price" id="price" onChange={handleChange} required/>
-        <label htmlFor="quantity">Quantity</label>
-        <input type="number" value={product.quantity} name="quantity" id="quantity" onChange={handleChange}/>
-        <label htmlFor="image">Product Image</label>
-        <input type="file" name="image" id="image" onChange={handleFileChange} />
-        <button className="update" onClick={addProduct}>Done</button>
+        <form className="form updationForm" style={{display: formDisplay}} encType="multipart/form-data">
+        <label className="form-label" htmlFor="name">Product Name</label>
+        <input className="form-input" type="text" value={product.name} name="name" id="name" onChange={handleChange} required/>
+        <label className="form-label" htmlFor="price">Price</label>
+        <input className="form-input" type="number" value={product.price} name="price" id="price" onChange={handleChange} required/>
+        <label className="form-label" htmlFor="quantity">Quantity</label>
+        <input className="form-input" type="number" value={product.quantity} name="quantity" id="quantity" onChange={handleChange}/>
+        <label className="form-label" htmlFor="image">Product Image</label>
+        <input className="form-input" type="file" name="image" id="image" onChange={handleFileChange} />
+        <button className="form-button update" onClick={addProduct}>Done</button>
       </form>
         <Products deleteItem={props.deleteItem} showAlert={props.showAlert}  getProduct={props.getProduct}/>
     </>

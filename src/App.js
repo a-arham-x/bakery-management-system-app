@@ -30,6 +30,7 @@ import AdminSettings from './components/AdminSettings';
 import AdminCustomers from './components/AdminCustomers';
 import AdminOrders from './components/AdminOrders';
 import Reviews from './components/Reviews';
+import AdminReports from './components/AdminReports';
 
 function App() {
   const [message, setMessage] = useState();
@@ -97,6 +98,7 @@ function App() {
                 <Route exact path="/admincustomers" element={<AdminCustomers setId={setId} />} />
                 <Route exact path="/vieworders" element={<AdminOrders markReceived={markReceived} id={customerId} showAlert={showAlert} />} />
                 <Route exact path="/reviews" element={<Reviews showAlert={showAlert}/>} />
+                <Route exact path="/reports" element={<AdminReports showAlert={showAlert}/>} />
               </Routes>
             </Router>
           </ReviewState>

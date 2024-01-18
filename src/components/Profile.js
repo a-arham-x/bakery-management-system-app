@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import customerContext from './context/customerContext';
 import "./assets/profile.css";
 import TwoStepAuthModel from './TwoStepAuthModal';
+import ReportModal from './ReportModal';
 
 function Profile(props) {
   const host = process.env.REACT_APP_HOST;
@@ -15,6 +16,7 @@ function Profile(props) {
   const [intype, setIntype] = useState("password");
   const [passwords, setPasswords] = useState({ oldPassword: "", newPassword: "", cPassword: "" });
   const [showTwoStepAuthModal, setShowTwoStepAuthModal] = useState(false);
+  const [showReportModal, setShowReportModal] = useState(false);
   const navigateToUpdate = () => {
     navigate("/update");
   }
@@ -97,8 +99,17 @@ function Profile(props) {
           <button className="form-button update" onClick={()=>setShowTwoStepAuthModal(true)}>Enable</button>
         </div>
       </div>
+      <div className="container">
+        <div className="information">
+          <p className="info">Report a Problem</p>
+        </div>
+        <div className="buttons">
+          <button className="form-button update" onClick={()=>setShowReportModal(true)}>Report</button>
+        </div>
+      </div>
       <button className="form-button logout" onClick={logOut}>Log Out</button>
       {showTwoStepAuthModal && <TwoStepAuthModel showModal={setShowTwoStepAuthModal} showAlert={props.showAlert}/>}
+      {showReportModal && <ReportModal showModal={setShowReportModal} showAlert={props.showAlert}/>}
     </>
   )
 }
