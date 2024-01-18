@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./assets/profile.css";
 
-function AdminHome() {
+function AdminHome(props) {
     const navigate = useNavigate();
     useEffect(() => {
         if (!localStorage.getItem("admin-token")) {

@@ -46,6 +46,13 @@ function ProductItem(props) {
     props.getProduct(props.product);
     navigate("/updateproduct");
   }
+
+  const showReviews = ()=>{
+    console.log("jjjjjjjj")
+    // props.reviewProductId(_id);
+    localStorage.setItem("reviewproductid", _id);
+    navigate("/reviews")
+  }
   return (
     <>
     <div className="productCard">
@@ -55,17 +62,18 @@ function ProductItem(props) {
         {location.pathname==="/order" &&
           <div className="item-buttons">
             <p>Quantity Available: {displayQuantity}</p>
-            <button className="item-button" disabled={parseInt(displayQuantity)===0} onClick={addToOrder}>+</button>
-            <button className="item-button" disabled={parseInt(displayQuantity)===quantity} onClick={removeFromOrder}>-</button>
+            <button className="form-button item-button" disabled={parseInt(displayQuantity)===0} onClick={addToOrder}>+</button>
+            <button className="form-button item-button" disabled={parseInt(displayQuantity)===quantity} onClick={removeFromOrder}>-</button>
           </div>
         }
         {location.pathname==="/adminproducts" &&
         <>
         <p>Quantity Available: {displayQuantity}</p>
-        <button className="remove-item" onClick={deleteItem}>Remove</button>
-        <button className="remove-item" onClick={updatePage}>Update</button>
+        <button className="form-button remove-item" onClick={deleteItem}>Remove</button>
+        <button className="form-button remove-item" onClick={updatePage}>Update</button>
         </> 
         }
+        <button className='remove-item form-button' onClick={showReviews}>Reviews</button>
     </div>
     </>
   )

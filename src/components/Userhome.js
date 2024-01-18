@@ -5,7 +5,7 @@ import { useContext, useState } from 'react';
 import Products from './Products';
 import customerContext from './context/customerContext';    
 
-function Userhome() {
+function Userhome(props) {
     const context = useContext(customerContext);
     const {getCustomer} = context;
     const [customer, setCustomer] = useState({});

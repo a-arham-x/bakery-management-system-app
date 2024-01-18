@@ -11,7 +11,7 @@ function AdminNavbar() {
         navigate("/");
     }
     return (
-        <nav className="navbar" style={{ display: navLocations.includes(location.pathname) ? "flex" : "none" }}>
+        <nav className="navbar" style={{ display: navLocations.includes(location.pathname) || (localStorage.getItem("admin-token") && location.pathname=="/reviews") ? "flex" : "none" }}>
             <ul className="nav-list">
                 <li className="nav-item"><Link style={{ color: `${location.pathname === "/adminhome"?"pink" : "white"}`, textDecoration: "none" }} to="/adminhome">Home</Link></li>
                 <li className="nav-item"><Link style={{ color: `${location.pathname === "/adminproducts" ? "pink" : "white"}`, textDecoration: "none" }} to="/adminproducts">Products</Link></li>

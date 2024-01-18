@@ -1,6 +1,5 @@
 import React from 'react'
 import "./assets/modal.css"
-import Modal from "react-overlays/Modal";
 
 function TwoStepAuthModel({showModal, showAlert}) {
   const closeModal = ()=>{

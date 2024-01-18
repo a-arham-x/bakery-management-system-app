@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Products from './Products.js';
+import "./assets/login.css";
 
 function Order(props) {
   const [products, setProducts] = useState([]);
@@ -104,13 +105,13 @@ function Order(props) {
   }
   return (
     <>  
-        <button className="order-button" onClick={viewPreviousOrders}>View Orders</button>
+        <button className="order-button form-button update" style={{width: "200px"}} onClick={viewPreviousOrders}>View Orders</button>
         <h1>Make orders here</h1>
         <div className="order-made">
           <p>Your order: {orderString}</p>
-          <p>Total Cost: {cost}</p>
+          <p>Total Cost: {cost}</p> 
         </div>
-        <button className="order-button" onClick={makeOrder}>Make Order</button>
+        <button className="order-button form-button update" style={{width: "200px"}} onClick={makeOrder}>Make Order</button>
         <Products addProduct={addProduct} removeProduct={removeProduct}/>
     </>
   )
