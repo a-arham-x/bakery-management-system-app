@@ -48,6 +48,11 @@ p{
     color: white;
     width: 150px;
     margin: 5px;
+    height: 40px;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;  
 }
 
 .order-card{
@@ -81,6 +86,11 @@ p{
     height: 700px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.product-image{
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 1000px){

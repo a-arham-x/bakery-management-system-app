@@ -26,7 +26,7 @@ function AdminReports({showAlert}) {
   return (
     <>
     {reports.length>0 && reports?.map((report)=>{
-        return <ReportCard report={report} showAlert={showAlert} fetchReports={fetchReports}/>
+        return <ReportCard key={report._id} report={report} showAlert={showAlert} fetchReports={fetchReports}/>
     })}
     </>
   )

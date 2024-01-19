@@ -175,11 +175,21 @@
     }
 
     .codeform{
-        width: 300px;
+        width: 200px;
     }
 
     .codeInputs{
         width: 300px;
+    }
+
+    .codeInputs{
+        width: 200px;
+    }
+
+    .numberInput{
+        height: 10px;
+        width: 10px;
+        font-size: 8px;
     }
 }
 
@@ -191,20 +201,6 @@
 
     .verificationButton{
         width: 260px;
-    }
-
-    .numberInput{
-        height: 20px;
-        width: 20px;
-        font-size: 10px;
-    }
-
-    .codeform{
-        width: 200px;
-    }
-
-    .codeInputs{
-        width: 200px;
     }
 }
 

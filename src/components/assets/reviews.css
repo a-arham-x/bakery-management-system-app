@@ -30,7 +30,14 @@
 
 .delete-img{
     width: 20px;
+    height: 30px;
     margin-left: auto;
     margin-right: 5px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .review-card{
+      width: 250px;
+    }
 }
