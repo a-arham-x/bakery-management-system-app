@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./assets/reports.css"
 
 function ReportCard({report, showAlert, fetchReports}) {
@@ -15,6 +15,21 @@ function ReportCard({report, showAlert, fetchReports}) {
         fetchReports();
         showAlert(json.message);
     }
+
+    const setReportSeen = async()=>{
+        if (report.isSeen){return}
+        await fetch(`${process.env.REACT_APP_HOST}/reports/setseen/${report._id}`, {
+            method: "PUT",
+            headers: {
+                "admin-token": localStorage.getItem("admin-token")
+            }
+        })
+    }
+
+    useEffect(()=>{
+        const reportSeen = async()=>{setReportSeen()}
+        reportSeen();
+    }, [])
 
   return (
     <div className="report-card">
