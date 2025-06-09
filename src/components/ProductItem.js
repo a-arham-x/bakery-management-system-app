@@ -53,27 +53,27 @@ function ProductItem(props) {
   }
   return (
     <>
-      <div className="productCard">
-        <div className="product-image">
-          <img src={imageUrl === "none" ? require("./assets/grey.png") : imageUrl} alt="Some Product" width="350" height="200" />
+      <div className="product-card">
+        <img className="product-image" src={imageUrl === "none" ? require("./assets/grey.png") : imageUrl} alt="Some Product" />
+        <div className="product-info">
+          <p>{name}</p>
+          <p>{price} /-</p>
+          {location.pathname === "/user/order" &&
+            <div className="item-buttons">
+              <p>Quantity Available: {displayQuantity}</p>
+              <button className="form-button item-button" disabled={parseInt(displayQuantity) === 0} onClick={addToOrder}>+</button>
+              <button className="form-button item-button" disabled={parseInt(displayQuantity) === quantity} onClick={removeFromOrder}>-</button>
+            </div>
+          }
+          {location.pathname === "/adminproducts" &&
+            <>
+              <p>Quantity Available: {displayQuantity}</p>
+              <button className="form-button remove-item" onClick={deleteItem}>Remove</button>
+              <button className="form-button remove-item" onClick={updatePage}>Update</button>
+            </>
+          }
+          <button className='review-button form-button' onClick={showReviews}>Reviews</button>
         </div>
-        <p>{name}</p>
-        <p>{price} /-</p>
-        {location.pathname === "/order" &&
-          <div className="item-buttons">
-            <p>Quantity Available: {displayQuantity}</p>
-            <button className="form-button item-button" disabled={parseInt(displayQuantity) === 0} onClick={addToOrder}>+</button>
-            <button className="form-button item-button" disabled={parseInt(displayQuantity) === quantity} onClick={removeFromOrder}>-</button>
-          </div>
-        }
-        {location.pathname === "/adminproducts" &&
-          <>
-            <p>Quantity Available: {displayQuantity}</p>
-            <button className="form-button remove-item" onClick={deleteItem}>Remove</button>
-            <button className="form-button remove-item" onClick={updatePage}>Update</button>
-          </>
-        }
-        <button className='remove-item form-button' onClick={showReviews}>Reviews</button>
       </div>
     </>
   )

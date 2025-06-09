@@ -1,31 +1,31 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import Products from './Products';
-import customerContext from './context/customerContext';    
+import React from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import Products from "./Products";
+import customerContext from "./context/customerContext";
 
-function Userhome(props) {
-    const context = useContext(customerContext);
-    const {getCustomer} = context;
-    const [customer, setCustomer] = useState({});
-    const navigate = useNavigate();
-    const fetchCustomer = async () => {
-        setCustomer(await getCustomer());
+function UserHome(props) {
+  const context = useContext(customerContext);
+  const { getCustomer } = context;
+  const [customer, setCustomer] = useState({});
+  const navigate = useNavigate();
+  const fetchCustomer = async () => {
+    setCustomer(await getCustomer());
+  };
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    } else {
+      fetchCustomer();
     }
-    useEffect(() => {
-        if (!localStorage.getItem("token")) {
-            navigate("/");
-        }else{
-            fetchCustomer();
-        }
-    }, []);
-    return (
-        <>
-            <h1>Welcome {customer.name}</h1>
-            <Products />
-        </>
-    )
+  }, []);
+  return (
+    <>
+      <h1>Welcome {customer.name}</h1>
+      <Products />
+    </>
+  );
 }
 
-export default Userhome;
+export default UserHome;

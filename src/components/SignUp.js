@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./assets/login.css";
+import { Link } from "react-router-dom";
 
 function SignUp(props) {
     const [intype, setIntype] = useState("password");
@@ -46,9 +47,9 @@ function SignUp(props) {
                 body: JSON.stringify({ email: credentials.email })
             });
             const json = await response.json();
-            if (json.success){
+            if (json.success) {
                 setFormDisplay("flex");
-            }else{
+            } else {
                 props.showAlert(json.message);
             }
         } else {
@@ -67,11 +68,12 @@ function SignUp(props) {
             body: JSON.stringify({ ...credentials, code: codeEntered })
         });
         const json = await response.json();
-        if (json.success){
+        setFormDisplay("none");
+        if (json.success) {
             localStorage.setItem("token", json.token);
-            navigate("/home");
-        }else{
-            props.showAlert(json.message);
+            navigate("/user/home");
+        } else {
+            props.showAlert(json.message)
         }
     }
 
@@ -84,35 +86,78 @@ function SignUp(props) {
     }
     return (
         <>
-            <form className="form" style={{ height: "600px", marginTop: "60px" }}>
-                <label className="form-label" htmlFor="email">Email Address</label>
-                <input className="form-input" type="email" value={credentials.email} name="email" id="email" onChange={handleChange} required />
-                <label className="form-label" htmlFor="password">Password</label>
-                <input className="form-input" type={intype} value={credentials.password} name="password" onChange={handleChange} id="password" required />
-                <label className="form-label" htmlFor="cpassword">Confirm Password</label>
-                <input className="form-input" type={intype} value={credentials.cpassword} name="cpassword" onChange={handleChange} id="cpassword" required />
-                <div className="showPasword">
-                    <input type="checkbox" id="checkbox" onChange={changeIntype} />
-                    <p className="showpassword">Show Password</p>
+            {/* <div className="row"> */}
+            {/* <div className="img-container">
+                    <img src={require("./assets/chef.png")} alt="" height="600" />
+                </div> */}
+            <form className="form signup-form">
+                <h1>Sign up to <span>order</span></h1>
+                <div className="form-row">
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="email">Email Address</label>
+                        <input className="form-input" type="email" value={credentials.email} name="email" id="email" onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="name">Your Name</label>
+                        <input className="form-input" type="text" value={credentials.name} name="name" id="name" onChange={handleChange} required />
+                    </div>
                 </div>
-                <label className="form-label" htmlFor="name">Your Name</label>
-                <input className="form-input" type="text" value={credentials.name} name="name" id="name" onChange={handleChange} required />
-                <label className="form-label" htmlFor="dateOfBirth">Date Of Birth</label>
-                <input className="form-input" type="date" value={credentials.dateOfBirth} name="dateOfBirth" id="dateOfBirth" onChange={handleChange} required />
-                <button className="verificationButton" onClick={getMail}>Get Verification Code</button>
-            </form>
-            <form className="codeform" style={{ display: formDisplay }}>
-                <label className="form-label" style={{marginBottom: "20px"}}>Enter Code</label>
-                <div className="codeInputs">
-                    <input className="numberInput" type="number" value={digits.digit1} maxLength="1" size="1" min="0" max="9" name="digit1" onChange={digitsChange} />
-                    <input className="numberInput" type="number" value={digits.digit2} maxLength="1" size="1" min="0" max="9" name="digit2" onChange={digitsChange} />
-                    <input className="numberInput" type="number" value={digits.digit3} maxLength="1" size="1" min="0" max="9" name="digit3" onChange={digitsChange} />
-                    <input className="numberInput" type="number" value={digits.digit4} maxLength="1" size="1" min="0" max="9" name="digit4" onChange={digitsChange} />
-                    <input className="numberInput" type="number" value={digits.digit5} maxLength="1" size="1" min="0" max="9" name="digit5" onChange={digitsChange} />
-                    <input className="numberInput" type="number" value={digits.digit6} maxLength="1" size="1" min="0" max="9" name="digit6" onChange={digitsChange} />
+                <div className="form-row">
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="password">Password</label>
+                        <input className="form-input" type={intype} value={credentials.password} name="password" onChange={handleChange} id="password" required />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="cpassword">Confirm Password</label>
+                        <input className="form-input" type={intype} value={credentials.cpassword} name="cpassword" onChange={handleChange} id="cpassword" required />
+                        <div className="showpassword-container">
+                            <input type="checkbox" id="checkbox" onChange={changeIntype} />
+                            <p className="showpassword">Show Password</p>
+                        </div>
+                    </div>
                 </div>
-                <button className="submit" onClick={register}>Submit</button>
+                <div className="form-row">
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="dateOfBirth">Date Of Birth</label>
+                        <input className="form-input" type="date" value={credentials.dateOfBirth} name="dateOfBirth" id="dateOfBirth" onChange={handleChange} required />
+                    </div>
+                    <div className="submit-container">
+                        <button className="form-button" onClick={getMail}>Submit</button>
+                    </div>
+                </div>
+                <div className="no-account">
+                    <p className="foraccount">Already signed up? </p>
+                    <p className="foraccount link-wrapper">
+                        <Link
+                            id="link"
+                            style={{ textDecoration: "none", cursor: "pointer" }}
+                            to="/login"
+                        >
+                            Login
+                        </Link>
+                    </p>
+                </div>
             </form>
+            <div className="code-modal-overlay" style={{ display: formDisplay }}>
+                <div className="code-modal-content">
+                    <div className="close-btn-container">
+                        <button className="close-btn" onClick={() => setFormDisplay("none")}>×</button>
+                    </div>
+                    <form className="code-form" onSubmit={register}>
+                        <label className="form-label" style={{ marginBottom: "20px" }}>Enter Code</label>
+                        <div className="code-inputs">
+                            <input className="number-input" type="number" value={digits.digit1} maxLength="1" size="1" min="0" max="9" name="digit1" onChange={digitsChange} />
+                            <input className="number-input" type="number" value={digits.digit2} maxLength="1" size="1" min="0" max="9" name="digit2" onChange={digitsChange} />
+                            <input className="number-input" type="number" value={digits.digit3} maxLength="1" size="1" min="0" max="9" name="digit3" onChange={digitsChange} />
+                            <input className="number-input" type="number" value={digits.digit4} maxLength="1" size="1" min="0" max="9" name="digit4" onChange={digitsChange} />
+                            <input className="number-input" type="number" value={digits.digit5} maxLength="1" size="1" min="0" max="9" name="digit5" onChange={digitsChange} />
+                            <input className="number-input" type="number" value={digits.digit6} maxLength="1" size="1" min="0" max="9" name="digit6" onChange={digitsChange} />
+                        </div>
+                        <button className="code-submit" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            {/* </div> */}
         </>
     )
 }
