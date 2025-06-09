@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./assets/grey.png";
 import "./assets/products.css"
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProductItem(props) {
-  const { imageUrl, name, price, quantity, _id } = props.product;
+  const { name, price, quantity, _id } = props.product;
+  const [imageUrl, setImageUrl] = useState(null)
   const location = useLocation();
+
+  // const getImageUrl = async () => {
+  //   const productImage = await fetch(`${host}/products/image/${_id}`, {
+  //     method: "GET"
+  //   })
+  //   console.log(productImage);
+  //   return productImage;
+  // }
+
+  // useEffect(() => {
+  //   const fetchImageUrl = async () => {
+  //     setImageUrl(await getImageUrl())
+  //   }
+  //   fetchImageUrl()
+  // }, [_id])
 
   const navigate = useNavigate();
 
@@ -54,7 +70,7 @@ function ProductItem(props) {
   return (
     <>
       <div className="product-card">
-        <img className="product-image" src={imageUrl === "none" ? require("./assets/grey.png") : imageUrl} alt="Some Product" />
+        <img className="product-image" src={`${host}/products/image/${_id}`} alt="Some Product" />
         <div className="product-info">
           <p>{name}</p>
           <p>{price} /-</p>

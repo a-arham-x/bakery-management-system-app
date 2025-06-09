@@ -17,6 +17,10 @@ function UserNavbar() {
     "/user/reviews",
   ];
 
+  if (localStorage.getItem("token")) {
+    navLocations.push("/reviews");
+  }
+
   const shouldShowNav =
     navLocations.includes(location.pathname) ||
     (localStorage.getItem("token") && location.pathname === "/user/reviews");

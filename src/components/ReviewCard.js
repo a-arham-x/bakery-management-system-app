@@ -2,7 +2,9 @@ import React from 'react'
 import moment from "moment"
 
 function ReviewCard({ review, currentCustomer, showAlert, setReviews, getReviews }) {
-    const { customer, comment, timestamp, customerId, imageUrl, productName } = review;
+    const { customer, comment, timestamp, customerId, productId, productName } = review;
+
+    const host = process.env.REACT_APP_HOST;
 
     const deleteReview = async () => {
         const response = await fetch(`${process.env.REACT_APP_HOST}/reviews/review/${review._id}`, {
@@ -27,7 +29,7 @@ function ReviewCard({ review, currentCustomer, showAlert, setReviews, getReviews
                 {currentCustomer._id === customerId && <img className="delete-img" src={require("./assets/delete.png")} onClick={deleteReview} />}
             </div>
             <div className="product-content">
-                <img src={imageUrl === "none" ? require("./assets/grey.png") : imageUrl} alt="" />
+                <img src={`${host}/products/image/${productId}`} alt="" />
                 <p>{productName}</p>
             </div>
         </div>

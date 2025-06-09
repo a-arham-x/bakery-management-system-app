@@ -74,7 +74,7 @@ function Reviews({ showAlert }) {
           </button>
         </div>}
         {reviews?.length === 0 && totalPages != 0 && <Spinner />}
-        {!reviews?.length === 0 && totalPages === 0 && (location.pathname === "/user/reviews" ? <h1>You have not given any reviews</h1> : <h1>No reviews have been made on this item.</h1>)}
+        {reviews?.length === 0 && totalPages === 0 && (location.pathname === "/user/reviews" ? <h1>You have not given any reviews</h1> : <h1>No reviews have been made on this item.</h1>)}
         {reviews?.length > 0 && <>
           {reviews.map((review) => {
             return <ReviewCard setReviews={setReviews} getReviews={getReviews} key={review._id} showAlert={showAlert} review={review} currentCustomer={currentCustomer} />
