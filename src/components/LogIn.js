@@ -17,7 +17,7 @@ function LogIn(props) {
         if (localStorage.getItem("token")) {
             navigate("/user/home ");
         } else if (localStorage.getItem("admin-token")) {
-            navigate("/adminhome");
+            navigate("/admin/home");
         }
     }, []);
 
@@ -45,7 +45,7 @@ function LogIn(props) {
             navigate("/user/home");
         } else if (json.adminToken) {
             localStorage.setItem("admin-token", json.adminToken);
-            navigate("/adminhome");
+            navigate("/admin/home");
         } else if (json.success) {
             setShowLoginCodeModal(true);
         } else {

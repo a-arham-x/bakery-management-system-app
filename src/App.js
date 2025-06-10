@@ -135,10 +135,10 @@ function App() {
                   path="/user/reviews"
                   element={<Reviews showAlert={showAlert} />}
                 />
-                <Route exact path="/adminhome" element={<AdminHome />} />
+                <Route exact path="/admin/home" element={<AdminHome />} />
                 <Route
                   exact
-                  path="/adminproducts"
+                  path="/admin/products"
                   element={
                     <AdminProducts
                       showAlert={showAlert}
@@ -155,12 +155,12 @@ function App() {
                 />
                 <Route
                   exact
-                  path="/adminsettings"
+                  path="/admin/settings"
                   element={<AdminSettings showAlert={showAlert} />}
                 />
                 <Route
                   exact
-                  path="/admincustomers"
+                  path="/admin/customers"
                   element={<AdminCustomers setId={setId} />}
                 />
                 <Route
@@ -181,7 +181,7 @@ function App() {
                 />
                 <Route
                   exact
-                  path="/reports"
+                  path="/admin/reports"
                   element={<AdminReports showAlert={showAlert} />}
                 />
               </Routes>

@@ -190,6 +190,14 @@ html {
   font-size: 18px;
 }
 
+.admin-nav-logout{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
 h1{
     text-align: center;
     color: #5d3205;
@@ -986,6 +994,49 @@ footer {
     margin: 20px;
 }
 
+.alter-products{
+    margin-left: 10%;
+}
+
+.customer-row{
+    width: 20%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.customer-orders{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.report-card{
+    width: 30%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.report-card>img{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.admin-settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.updation-form{
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.admin-update{
+    margin-top: 30px;
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -1029,6 +1080,10 @@ footer {
   }
   .hamburger-nav {
     display: flex;
+  }
+
+  .admin-nav-logout{
+    margin-left: 10px;
   }
     .nav-item{
         font-size: 20px;
@@ -1106,6 +1161,7 @@ footer {
   
   .product-card{
     flex-direction: column;
+    height: fit-content;
     width: 80%;
   }
 

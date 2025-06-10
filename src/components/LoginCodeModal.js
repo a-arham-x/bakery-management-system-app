@@ -47,7 +47,7 @@ function LoginCodeModal({ credentials, showAlert, showModal }) {
       navigate("/user/home");
     } else if (json.adminToken) {
       localStorage.setItem("admin-token", json.adminToken);
-      navigate("/adminhome");
+      navigate("/admin/home");
     } else {
       showAlert(json.message);
     }

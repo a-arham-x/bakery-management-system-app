@@ -81,11 +81,11 @@ function ProductItem(props) {
               <button className="form-button item-button" disabled={parseInt(displayQuantity) === quantity} onClick={removeFromOrder}>-</button>
             </div>
           }
-          {location.pathname === "/adminproducts" &&
+          {location.pathname === "/admin/products" &&
             <>
               <p>Quantity Available: {displayQuantity}</p>
               <button className="form-button remove-item" onClick={deleteItem}>Remove</button>
-              <button className="form-button remove-item" onClick={updatePage}>Update</button>
+              <button className="form-button remove-item" onClick={updatePage} style={{ marginLeft: "20px" }}>Update</button>
             </>
           }
           <button className='review-button form-button' onClick={showReviews}>Reviews</button>
